@@ -18,6 +18,11 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'country')->textInput(['maxlength' => true]) ?>
 
+    <?= $form->field($model, 'status')->dropDownList([
+            0 => 'Blocked',
+        1 => 'Active'
+    ]) ?>
+
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
     </div>

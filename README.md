@@ -58,3 +58,22 @@ frontend
 vendor/                  contains dependent 3rd-party packages
 environments/            contains environment-based overrides
 ```
+# Library
+
+This application makes it easy to control books and their authors.
+
+## Installation
+
+After installing fresh yii application you have to clone this repository and run:
+
+```bash
+composer update
+```
+
+## Usage
+
+In backend application you can find 2 parts :
+- Books, with their CRUD principe;
+- Authors, with their CRUD principe;
+
+In frontend application you can see list of authors with their books. Good luck!

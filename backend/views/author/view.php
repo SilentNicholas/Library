@@ -33,7 +33,20 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'surname',
             'country',
-            'status',
+            [
+                    'attribute' => 'status',
+                'format' => 'raw',
+                'value' => function ($data) {
+        return $data->status ? 'Active' : 'Blocked';
+                }
+            ],
+            [
+                    'attribute' => 'books',
+                'format' => 'raw',
+                'value' => function ($data) {
+        return $data->getCountAuthorBooks();
+                }
+            ]
         ],
     ]) ?>
 

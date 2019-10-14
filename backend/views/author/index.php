@@ -30,7 +30,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'surname',
             'country',
-            'status',
+            [
+                    'attribute' => 'status',
+                'content' => function ($data) {
+        return $data->status ? 'Active' : 'Blocked';
+                }
+            ],
+            [
+                'attribute' => 'books',
+                'content' => function ($data) {
+                    return $data->getCountAuthorBooks();
+                }
+            ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],

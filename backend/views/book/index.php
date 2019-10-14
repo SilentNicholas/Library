@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use backend\models\Author;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\BookSearch */
@@ -30,7 +31,13 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'genre',
             'pages_count',
-            'author_id',
+            [
+                    'attribute' => 'author',
+                    'format' => 'text',
+                    'content' => function ($data) {
+        return $data->getAuthorName();
+                    }
+                    ],
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
